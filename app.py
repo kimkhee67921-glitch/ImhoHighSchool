@@ -10,7 +10,7 @@ from google.genai import types
 # 1. 기본 설정 및 커스텀 CSS
 # ==========================================
 st.set_page_config(
-    page_title="2026 고등학교 생기부 기재요령 Q&A",
+    page_title="2026 고등학교 생기부 기재요령 Q&A (ver 3.2)",
     page_icon="📘",
     layout="wide",
 )
@@ -55,6 +55,20 @@ html, body, [class*="css"] {
     color: #0f172a;
     margin: 0 0 0.45rem 0;
     letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+.version-tag {
+    display: inline-block;
+    background-color: #dbeafe;
+    color: #1d4ed8;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 8px;
+    vertical-align: middle;
 }
 .hero-subtitle {
     font-size: 0.95rem;
@@ -211,6 +225,10 @@ html, body, [class*="css"] {
     }
     .hero-title {
         font-size: 1.25rem;
+    }
+    .version-tag {
+        font-size: 0.75rem;
+        padding: 0.15rem 0.5rem;
     }
     .hero-subtitle {
         font-size: 0.84rem;
@@ -569,13 +587,14 @@ with st.sidebar:
         st.rerun()
 
     st.markdown("---")
+    st.caption("버전: **ver 3.2**")
     st.caption("⚠️ 학생 실명·주민번호 등 개인정보는 입력하지 마세요.")
 
 st.markdown(
     """
     <div class="hero-header">
         <div class="hero-badge">2026학년도 공식 기준 · 임호고 반영</div>
-        <h1 class="hero-title">📘 고등학교 학교생활기록부 기재요령 Q&A</h1>
+        <h1 class="hero-title">📘 고등학교 학교생활기록부 기재요령 Q&A <span class="version-tag">ver 3.2</span></h1>
         <p class="hero-subtitle">교육부 공식 기재요령(2026년) 원문을 근거로 답변합니다. 임호고등학교 학교장 결정 및 자체 안내 기준도 함께 반영해 안내해 드립니다.</p>
     </div>
     """,
